@@ -1,0 +1,10 @@
+require('dotenv').config();
+const path = require('path')
+const dbUri = process.env.DB_URI;
+
+module.exports = {
+  'url': dbUri,         
+  'migrations-path': path.resolve('migrations'),
+  'models-path':     path.resolve('models'),
+  'seeders-path':    path.resolve('seeders'),
+}

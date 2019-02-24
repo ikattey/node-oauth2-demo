@@ -1,0 +1,59 @@
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar576PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>Authorization Code Client</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1 class="display-4">Authorization Grant Demo</h1>
+            <p class="lead">This page simulates an OAuth Client requiring a user's permission to access their data. It expects the authorization
+                server to be reachable on
+                <code>http://localhost:3000</code>
+            </p>
+        </div>
+        <a class="login-button btn btn-primary btn-lg" href="#" onclick="triggerOauth()" role="button">Login with OAuth</a>
+
+        <div class="oauth">
+            <div class="col-md-6">
+                <!-- <div class="col-md-12"> -->
+                    <div class="card">
+                        <div class='card-body'>
+                            <ul class='list-group list-group-flush'>
+                                <li class='list-group-item'>
+                                    <strong>Access Token: </strong><span id="access-token"></span>
+                                </li>
+                                <li class='list-group-item'>
+                                    <strong>Token Type: </strong><span id="token-type"></span>
+                                </li>
+                                <li class='list-group-item'>
+                                    <strong>Expires in (ms): </strong><span id="expires-in"></span>
+                                </li>
+                                <li class='list-group-item'>
+                                    <strong>Refresh Token: </strong> <span id="refresh-token"></span>
+                                </li>
+                            </ul>
+                            <div>
+                            <a href='#' class='btn btn-primary mt-2' onclick='refreshAccessToken()'>Get new token</a>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- add script tags here -->
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</body>
+
+</html>

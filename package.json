@@ -1,0 +1,52 @@
+{
+  "name": "oauth2-demo",
+  "version": "1.0.0",
+  "description": "PoC OAuth 2.0 Resource / Authorization server",
+  "main": "./bin/www",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "lint": "node_modules/.bin/esw ./**/*.js",
+    "lint:watch": "npm run lint -- --watch",
+    "start:watch": "nodemon node ./bin/www",
+    "migrate": "node_modules/.bin/sequelize db:migrate",
+    "migrate:undo:all": "node_modules/.bin/sequelize db:migrate:undo:all",
+    "seed": "node_modules/.bin/sequelize db:seed:all",
+    "cold-start": "npm-run-all migrate:undo:all migrate seed",
+    "dev": "npm-run-all --parallel start:watch lint:watch",
+    "test": "jest --runInBand --forceExit"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "~1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.15.5",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.5.2",
+    "oauth2-server": "^3.0.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^6.4.2",
+    "sequelize": "^4.37.1",
+    "sequelize-cli": "^4.0.0",
+    "tedious": "^1.15.0",
+    "winston": "^2.4.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "jest": "^23.6.0",
+    "sequelize-fixtures": "^0.7.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-jest": "^22.1.0",
+    "npm-run-all": "^4.1.3",
+    "eslint-watch": "^3.1.5",
+    "supertest": "^3.1.0",
+    "nodemon": "^1.18.3"
+  },
+  "author": "Immanuel Kattey",
+  "license": "ISC",
+  "nodemonConfig": {
+    "delay": "2000"
+  }
+}
